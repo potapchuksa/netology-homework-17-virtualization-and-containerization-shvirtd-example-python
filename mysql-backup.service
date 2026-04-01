@@ -1,0 +1,7 @@
+[Unit]
+Description=MySQL Backup
+After=docker.service
+
+[Service]
+Type=oneshot
+ExecStart=/opt/shvirtd-example/backup.sh

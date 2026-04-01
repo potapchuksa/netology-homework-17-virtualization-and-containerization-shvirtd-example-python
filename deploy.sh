@@ -1,8 +1,11 @@
+#!/bin/bash
+set -e
+
 REPO_URL="https://github.com/potapchuksa/netology-homework-17-virtualization-and-containerization-shvirtd-example-python.git"
 DEPLOY_DIR="/opt/shvirtd-example"
 
 if [ -d "$DEPLOY_DIR" ]; then
-    sudo cd "$DEPLOY_DIR" && git pull
+    cd "$DEPLOY_DIR" && git pull
 else
     sudo git clone "$REPO_URL" "$DEPLOY_DIR"
     sudo chown -R $USER:$USER "$DEPLOY_DIR"

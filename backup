@@ -1,0 +1,4 @@
+#!/bin/sh
+now=$(date +"%Y%m%d_%H%M%S")
+/usr/bin/mysqldump --opt -h ${MYSQL_HOST} -u ${MYSQL_USER} -p${MYSQL_PASSWORD} ${MYSQL_DATABASE} > "/backup/${now}_${MYSQL_DATABASE}.sql"
+ls -t /backup/*.sql 2>/dev/null | tail -n +11 | xargs -r rm
